@@ -1,0 +1,76 @@
+\documentclass[12pt]{article}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault} % Makes Helvetica the default font
+% set the page layout
+\usepackage{geometry}
+
+\usepackage{mathptmx}  % Times-like font
+\geometry{
+  a4paper,
+  left=20mm,
+  %right=
+  %bottom=
+  top=15mm
+}
+%empty the headers, footers, pagenumbers…
+\pagestyle{empty}
+
+%Custom sectioning with secsty
+\usepackage{sectsty}
+\sectionfont{%                        
+    \large % make sections smaller
+    \fontfamily{ptm}\selectfont % change font family
+    \sectionrule{0pt}{0pt}{-5pt}{1pt} % insert a thin rule
+}
+
+%% MACROS %%
+
+% size of the boxes used to align text
+\newlength{\spacebox}
+\settowidth{\spacebox}{123456789}
+% vertical space separator between entries
+\newcommand{\sepspace}{\vspace*{1em}}
+
+%name macro
+\newcommand{\name}[1]{
+    \Huge%font size
+    \fontfamily{ptm}\selectfont %font family
+    %print name centered and bold
+    \begin{center} \textbf{#1} \end{center}\par
+    %back to normal size and font
+    \normalsize
+    \normalfont
+}
+
+%info macro
+\newcommand{\info}[2]{
+    %set indentation for personal information
+    \noindent
+    \hangindent=2em
+    \hangafter=0
+    %create a box to align two pieceso of text
+    \parbox{\spacebox}{\textsl{#1}} \hspace{1em} #2 \par
+} %entry value
+
+%skill macro
+\newcommand{\skill}[2]{
+    \noindent\hangindent=2\hangafter=0
+}
+
+\begin{document}
+    \name{Connor Blaha}
+    \sepspace
+    %personal information
+    \section*{Personal Info}
+    \info{Email}{\texttt{blaha.s.connor@gmail.com}}
+    \info{Phone}{\texttt{330-606-0527}}
+    \info{Github}{\texttt{sunch1p}}
+    \info{Address}{\texttt{916 Stein Ct, Kent, Ohio, 44240, apt 304}}
+    \info{Website}{\texttt{www.sunch1p.com}}
+    \section*{Education}
+    \section*{Relevant Coursework}
+    \section*{Skills}
+    \section*{Projects}
+    \section*{Job Experience}
+
+\end{document}
