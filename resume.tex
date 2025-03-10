@@ -3,6 +3,8 @@
 \renewcommand{\familydefault}{\sfdefault} % Makes Helvetica the default font
 % set the page layout
 \usepackage{geometry}
+%set page spacing
+\usepackage{setspace}
 
 \usepackage{mathptmx}  % Times-like font
 \geometry{
@@ -52,25 +54,104 @@
     \parbox{\spacebox}{\textsl{#1}} \hspace{1em} #2 \par
 } %entry value
 
-%skill macro
-\newcommand{\skill}[2]{
-    \noindent\hangindent=2\hangafter=0
+
+
+%Subsection dated macro
+\newcommand{\datedsubsection}[2]{%
+  \subsection*{\normalsize \normalfont #1 \hfill #2}%
+}
+
+\newcommand{\skill}[2]{%
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth} % Left column (skill name)
+        \textsc{#1} % Small caps for skill title
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.55\textwidth} % Right column (description)
+        #2 % Multi-line description
+    \end{minipage}%
+    \vspace{0.8em}
+    \par
+}
+
+\newcommand{\project}[3]{
+    \noindent \textbf{#1} \hfill #2
+    \par
+    #3
+    \par
+    \vspace{0.8em}
+}
+
+\newcommand{\job}[5]{
+    \noindent \textbf{#1} \hfill #2
+    \par
+    #3
+    \par
+    #4
+    \par
+    #5
+    \par
 }
 
 \begin{document}
-    \name{Connor Blaha}
-    \sepspace
-    %personal information
-    \section*{Personal Info}
-    \info{Email}{\texttt{blaha.s.connor@gmail.com}}
-    \info{Phone}{\texttt{330-606-0527}}
-    \info{Github}{\texttt{sunch1p}}
-    \info{Address}{\texttt{916 Stein Ct, Kent, Ohio, 44240, apt 304}}
-    \info{Website}{\texttt{www.sunch1p.com}}
-    \section*{Education}
-    \section*{Relevant Coursework}
-    \section*{Skills}
-    \section*{Projects}
-    \section*{Job Experience}
+    \begin{spacing}{1}
+        \name{Connor Blaha}
+        \sepspace
+        %personal information
+        \info{Email}{\texttt{blaha.s.connor@gmail.com}}
+        \info{Phone}{\texttt{330-606-0527}}
+        \info{Github}{\texttt{https://github.com/SunCh1p}}
+        \info{Address}{\texttt{916 Stein Ct, Kent, Ohio, 44240, apt 304}}
+        %Education information
+        \section*{\normalfont Education}
+        \datedsubsection{Bachelor of Science}{Graduate December 2025}
+        Kent State University, Kent, Ohio
+        \par
+        \noindent Major: Computer Science
+        \par
+        \noindent GPA: 3.9
+        %Coursework information
+        \section*{\normalfont Relevant Coursework}
+        Design Patterns, Algorithms, Introduction to Artificial Intelligence, Human Interfaces and Computing, Introduction to Databases, Artificial intelligence, Introduction to Software Engineering
+        \section*{\normalfont Technical Skills}
+        \skill{Programming Skills}{C++, Python, HTML, CSS, Javascript, React, Nodejs, Express, Sqlite, MySql, Pygame, Flask, Git, Bash Command Line, Latex}
+        \skill{General Computer Skills}{Linux, Windows, Microsoft Office, Google Docs, Typing(90+wpm)}
+        %Projects information
+        \section*{\normalfont Projects}
+        \project{ItemQuest}{January 2025 - Present}{
+            \begin{quote}
+                Collaborated with a team to implement a multiplayer AI image recognition game using Flask, SocketIO, React, P5.js, Sqlite, and Tensorflow.js
+            \end{quote}
+            \par
+            Github: https://github.com/Item-Quest/TeamBravo
+        }
+        \project{GetItRight}{February 2024 - May 2024}{
+            \begin{quote}
+                Collaborated with a team to build a sample computer parts store app that utilizes MySql, Flask, HTML, CSS, and Javascript.
+            \end{quote}
+            \par
+            Github: https://github.com/SunCh1p/Database-Project
+        }
+        \project{Minesweeper}{January 2023 - May 2023}{
+            \begin{quote}
+                Built minesweeper clone with team using Python, Pygame, and Microsoft Paint
+            \end{quote}
+            Github: https://github.com/OU-CS3560/minesweeper
+        }
+        %Job information
+        \section*{\normalfont Job Experience}
+        \job{Texas Roadhouse}{May 2024 - August 2024}{Stow, Ohio}{Kitchen Staff} {
+            Worked in a fast-paced, high-volume kitchen environment. 
+        }
+        \job{Walmart}{July 2023 - January 2024}{Streetsboro, Ohio}{Online Personal Shopper} {
+            Picked online orders for customer pick up and delivery while ensuring accuracy.
+        }
+        \job{Texas Roadhouse}{April 2022 - June 2023}{Athens, Ohio}{Kitchen Staff} {
+            Worked in a fast-paced, high-volume kitchen environment.
+        }
+        \job{Pizza Cottage}{September 2021 - March 2022}{Athens, Ohio}{Kitchen Staff} {
+            Fast-paced work environment. Prepared Pizzas and subs.
+        }
+    \end{spacing}
 
 \end{document}
