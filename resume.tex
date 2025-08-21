@@ -1,4 +1,4 @@
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 \usepackage[utf8]{inputenc}
 \renewcommand{\familydefault}{\sfdefault} % Makes Helvetica the default font
 % set the page layout
@@ -10,10 +10,10 @@
 \usepackage{mathptmx}  % Times-like font
 \geometry{
   a4paper,
-  left=20mm,
-  %right=
-  %bottom=
-  top=15mm
+  left=0.75in,
+  right=0.75in,
+  bottom=0.75in,
+  top=0.75in
 }
 %empty the headers, footers, pagenumbers…
 \pagestyle{empty}
@@ -102,13 +102,17 @@
     \begin{spacing}{1}
         \name{Connor Blaha}
         %Personal information
-        \horizontalBox{blaha.s.connor@gmail.com}{330-606-0527}{916 Stein Ct, Apt 304, Kent Ohio}
+        \horizontalBox{blaha.s.connor@gmail.com}{330-606-0527}{Github: \url{https://github.com/SunCh1p}}
         %Summary
         \splitbox{Objective:}{ Computer Science student with skills in C++, Python, and Javascript seeking an opportunity to apply skills in a real-world software development role, either as an intern or junior dev.}
         \splitbox{Education:}{BS Computer Science
             \par Expected Graduation: December 2025. \par Kent State University, Kent, Ohio \par GPA: 3.86}
-        \splitbox{Skills:}{C++, Python, HTML, CSS, Javascript, React, Nodejs, Express, Sqlite, MySql, Pygame, Flask, Git, Bash Command Line, Latex}
-        \splitbox{Coursework:}{Design Patterns, Algorithms, Introduction to Artificial Intelligence, Human Interfaces and Computing, Introduction to Databases, Artificial intelligence, Introduction to Software Engineering, Introduction to Computer Graphics, Introduction to game design, Embedded Systems}
+        \splitbox{Skills:}{
+            \textbf{Languages} C++, Python, JavaScript, SQL, Bash\\
+            \textbf{Frameworks / Libraries:} React, Node.js, Express, Flask, Pygame\\
+            \textbf{Tools:} Git, LaTeX, VSCode, SQLite, MySQL}
+        \splitbox{Coursework:}{Design Patterns, Algorithms, Introduction to Artificial Intelligence, Human Interfaces and Computing, Introduction to Databases, Artificial intelligence, Introduction to Software Engineering, Introduction to Computer Graphics, Introduction to game design, Embedded Systems
+        }
         \vspace{-1.5em}
         \section*{\Large \textbf{Projects}}
         \normalsize
@@ -126,7 +130,7 @@
         {
             \begin{itemize}
                 \setlength\itemsep{0.01em}
-                \item Built using React, Expressjs, and Sqlite \par
+                \item Built using React, Bootstrap, Expressjs, and Sqlite \par
                 \item Implemented typing app with capabilities to track words per minute, generate random texts, use random scores, login system, and leaderboard  \par
                 \item Collaborated with team of 4.
             \end{itemize}
@@ -139,6 +143,15 @@
                 \item App built to simulate a robot in a warehouse with a dynamic obstacle environment.
                 \item Implemented and visualized A* algorithm  \par
                 \item Collaborated with a 2 person team to build and present the project.
+            \end{itemize}
+            \par
+        }
+        \project{Personal Website}{January 2025 - May 2025}{\textbf{Github Link:} \url{https://github.com/SunCh1p/PersonalWebsite}}
+        {
+            \begin{itemize}
+                \setlength\itemsep{0.01em}
+                \item Personal website, project used to get my bearings around React and bootstrap.
+                \item Implemented usig React and Bootstrap\par
             \end{itemize}
             \par
         }
