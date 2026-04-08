@@ -1,0 +1,158 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault} % Makes Helvetica the default font
+% set the page layout
+\usepackage{geometry}
+%set page spacing
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\usepackage{mathptmx}  % Times-like font
+\geometry{
+  a4paper,
+  left=0.75in,
+  right=0.75in,
+  bottom=0.75in,
+  top=0.75in
+}
+%empty the headers, footers, pagenumbers…
+\pagestyle{empty}
+
+%Custom sectioning with secsty
+\usepackage{sectsty}
+\sectionfont{%                        
+    \large % make sections smaller
+    \fontfamily{ptm}\selectfont % change font family
+    \sectionrule{0pt}{0pt}{-5pt}{1pt} % insert a thin rule
+}
+
+%% MACROS %%
+
+% size of the boxes used to align text
+\newlength{\spacebox}
+\settowidth{\spacebox}{123456789}
+% vertical space separator between entries
+\newcommand{\sepspace}{\vspace*{1em}}
+
+%name macro
+\newcommand{\name}[1]{
+    \Huge%font size
+    \fontfamily{ptm}\selectfont %font family
+    %print name centered and bold
+    \noindent\textbf{#1}\par
+    %back to normal size and font
+    \normalsize
+    \normalfont
+}
+
+\newcommand{\horizontalBox}[3]{
+    \vspace{1em}
+    \noindent \textsl{#1} \textbar{} \textsl{#2} \textbar{} \textsl{#3}
+    \par
+    \vspace{1em}
+    \noindent\rule{\linewidth}{1pt}% draws a thin line
+    \vspace{-0.5em}
+}
+
+\newcommand{\splitbox}[2]{
+    \par\vspace{1em}
+    \noindent\makebox[\linewidth][l]{
+        \parbox[t]{0.25\linewidth}{\large \textbf{#1} \normalsize}
+        \parbox[t]{0.75\linewidth}{#2}%
+    }
+}
+
+%Subsection dated macro
+\newcommand{\datedsubsection}[2]{%
+  \subsection*{\normalsize \normalfont #1 \hfill #2}%
+}
+
+\newcommand{\skill}[2]{%
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth} % Left column (skill name)
+        \textsc{#1} % Small caps for skill title
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.55\textwidth} % Right column (description)
+        #2 % Multi-line description
+    \end{minipage}%
+    \vspace{0.8em}
+    \par
+}
+
+\newcommand{\project}[4]{
+    \noindent \textbf{#1}\normalsize \hfill #2
+    \par
+    \noindent #3
+    #4
+}
+
+\newcommand{\job}[5]{
+    \noindent \textbf{#1} \textbar{} \textit{#5} \textbar{} \textit{#3} \hfill #2
+    \par
+    \begin{quote}
+    #4
+    \end{quote}
+    \par
+}
+
+\begin{document}
+    \begin{spacing}{1}
+        \name{Connor Blaha}
+        %Personal information
+        \horizontalBox{blaha.s.connor@gmail.com}{330-606-0527}{\url{https://github.com/SunCh1p}}
+        %Summary
+        \splitbox{Summary:}{Recent College Graduate seeking professional opportunities in any field. Skilled on computers and good with analytical problems, but willing to adapt and learn in any environment.}
+        \splitbox{Education:}{BS Computer Science
+            \par December 2025. \par Kent State University, Kent, Ohio \par GPA: 3.89
+            \par
+            \vspace{0.8em}
+            \par
+            Highschool Diploma
+            \par
+            May 2019
+            \par
+            Lakewood Highschool, Hebron, Ohio
+            \par
+            GPA: 3.34
+            \par}
+        \splitbox{Technical Skills:}{
+            \textbf{Languages} C++, Python, C\#, JavaScript, HTML, CSS, SQL, Bash, LaTeX\\
+            \textbf{Frameworks / Libraries:} React, Node.JS, Express, Flask, Pygame\\
+            \textbf{Tools:} Git, VSCode, VisualStudio, SQLite, MySQL}
+        \vspace{-1.5em}
+
+        \section*{\Large \textbf{Work Experience}}
+        \vspace{1em}
+        \job{Lowes}
+        {January 2026 - Present}
+        {Sale's Associate}
+        {Provide knowledgable and friendly service to assist customers on the sale's floor. Role also involves stocking shelves and assisting customers in transporting large and heavy merchandise to their vehicles post purchase.}
+        {Heath Ohio}
+        \job{Apple Bees}
+        {April 2025 - August 2025}
+        {Server}
+        {Responsible for customer experience in fast paced restaurant environment. Managed multiple tables simultaneously, ensuring the needs of each were met.}
+        {Stow Ohio}
+        \job{Texas Roadhouse}
+        {May 2024 - August 2024}
+        {Line cook}
+        {Worked with kitchen team cooking and preparing orders for customers in a high volume, highly variable, and fast paced environment, where timeliness is of the essential.}
+        {Stow Ohio}
+        \job{Walmart}
+        {July 2023 - January 2024}
+        {Online Pickup And Delivery}
+        {Pick groceries for online orders for customers. Ensured orders were properly bagged and met quality standards before being sent off for delivery to customers.}
+        {Streetsboro Ohio}
+        \job{Texas Roadhouse}
+        {April 2022 - June 2023}
+        {Line cook}
+        {Worked with kitchen team cooking and preparing orders for customers in a high volume, highly variable, and fast paced environment, where timeliness is of the essential.}
+        {Athens Ohio}
+        \job{Pizza Cottage}
+        {September 2021 - March 2022}
+        {Kitchen Staff}
+        {Worked on sub station, preparing subs for customers in a timely manner}
+        {Athens Ohio}
+    \end{spacing}
+\end{document}

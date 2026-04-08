@@ -1,0 +1,159 @@
+\documentclass[11pt]{article}
+\usepackage[utf8]{inputenc}
+\renewcommand{\familydefault}{\sfdefault} % Makes Helvetica the default font
+% set the page layout
+\usepackage{geometry}
+%set page spacing
+\usepackage{setspace}
+\usepackage{hyperref}
+
+\usepackage{mathptmx}  % Times-like font
+\geometry{
+  a4paper,
+  left=0.75in,
+  right=0.75in,
+  bottom=0.75in,
+  top=0.75in
+}
+%empty the headers, footers, pagenumbers…
+\pagestyle{empty}
+
+%Custom sectioning with secsty
+\usepackage{sectsty}
+\sectionfont{%                        
+    \large % make sections smaller
+    \fontfamily{ptm}\selectfont % change font family
+    \sectionrule{0pt}{0pt}{-5pt}{1pt} % insert a thin rule
+}
+
+%% MACROS %%
+
+% size of the boxes used to align text
+\newlength{\spacebox}
+\settowidth{\spacebox}{123456789}
+% vertical space separator between entries
+\newcommand{\sepspace}{\vspace*{1em}}
+
+%name macro
+\newcommand{\name}[1]{
+    \Large%font size
+    \fontfamily{ptm}\selectfont %font family
+    %print name centered and bold
+    \begin{center} \textbf{#1} \end{center}\par
+    %back to normal size and font
+    \normalsize
+    \normalfont
+}
+
+\newcommand{\horizontalBox}[3]{
+    \makebox[\linewidth][c]{
+        \textsl{#1}\hfill$\bullet$\hfill
+        \textsl{#2}\hfill$\bullet$\hfill
+        \textsl{#3}
+    }
+        \noindent\rule{\linewidth}{0.4pt}% draws a thin line
+}
+
+\newcommand{\splitbox}[2]{
+    \par\vspace{1em}
+    \noindent\makebox[\linewidth][l]{
+        \parbox[t]{0.25\linewidth}{\large \textbf{#1} \normalsize}
+        \parbox[t]{0.75\linewidth}{#2}%
+    }
+}
+
+%Subsection dated macro
+\newcommand{\datedsubsection}[2]{%
+  \subsection*{\normalsize \normalfont #1 \hfill #2}%
+}
+
+\newcommand{\skill}[2]{%
+    \noindent
+    \begin{minipage}[t]{0.45\textwidth} % Left column (skill name)
+        \textsc{#1} % Small caps for skill title
+    \end{minipage}%
+    \hfill
+    \begin{minipage}[t]{0.55\textwidth} % Right column (description)
+        #2 % Multi-line description
+    \end{minipage}%
+    \vspace{0.8em}
+    \par
+}
+
+\newcommand{\project}[4]{
+    \noindent \textbf{#1}\normalsize \hfill #2
+    \par
+    \noindent #3
+    #4
+}
+
+\newcommand{\job}[5]{
+    \noindent \textbf{#1} \hfill #2
+    \par
+    #3
+    \par
+    #4
+    \par
+    #5
+    \par
+}
+
+\begin{document}
+    \begin{spacing}{1}
+        \name{Connor Blaha}
+        %Personal information
+        \horizontalBox{blaha.s.connor@gmail.com}{330-606-0527}{Github: \url{https://github.com/SunCh1p}}
+        %Summary
+        \splitbox{Objective:}{ Computer Science Graduate with skills in C++, python, javascript.}
+        \splitbox{Education:}{BS Computer Science
+            \par Graduated December 2025. \par Kent State University, Kent, Ohio \par GPA: 3.89}
+        \splitbox{Skills:}{
+            \textbf{Languages} C++, Python, C\#, JavaScript, HTML, CSS, SQL, Bash, LaTeX\\
+            \textbf{Frameworks / Libraries:} React, Node.JS, Express, Flask, Pygame\\
+            \textbf{Tools:} Git, VSCode, VisualStudio, SQLite, MySQL}
+        \splitbox{Coursework:}{Design Patterns, Algorithms, Introduction to Artificial Intelligence, Human Interfaces and Computing, Introduction to Databases, Artificial intelligence, Introduction to Software Engineering, Introduction to Computer Graphics, Introduction to Game Design, Embedded Systems
+        }
+        \vspace{-1.5em}
+        \section*{\Large \textbf{Projects}}
+        \normalsize
+        \project{OpenGL Game}{August 2025 - December 2025}{\textbf{Github Link:} \url{https://github.com/SunCh1p/ComputerGraphicsClass}}
+        {
+            \begin{itemize}
+                \setlength\itemsep{0.01em}
+                \item 3D game built with C++ and FREEGLUT 
+                \item Implemented an Entity Component System for most of game logic and rendering  \par
+                \item Collision system, animations, projectile system, Model loading, Score System
+            \end{itemize}
+            \par
+        }
+        \project{Doc Reformed}{August 2025 - December 2025}{\textbf{Github Link:} \url{https://github.com/ch33s322/CS49999-Capstone}}
+        {
+            \begin{itemize}
+                \setlength\itemsep{0.01em}
+                \item Pdf splitting application developed with dotnet and wpf for capstone project
+                \item pipe and filter architecture
+            \end{itemize}
+            \par
+        }
+        \project{ItemQuest}{January 2025 - May 2025}{\textbf{Github Link:} \url{https://github.com/Item-Quest/TeamBravo}}
+        {
+            \begin{itemize}
+                \setlength\itemsep{0.01em}
+                \item Built using Socket.IO, Flask, React, and Tensorflow.js \par
+                \item Implemented real-time multiplayer with live scoring system and capabilities to run multiple simultaneous games. \par
+                \item Collaborated with a team of 10 to design and build the project using an agile methodology called scrum and a kanban board on github
+            \end{itemize}
+            \par
+        }
+        \project{ZoomZoomType}{January 2025 - May 2025}{\textbf{Github Link:} \url{https://github.com/SunCh1p/ZoomZoomType}}
+        {
+            \begin{itemize}
+                \setlength\itemsep{0.01em}
+                \item Built using React, Bootstrap, Expressjs, and Sqlite \par
+                \item Implemented typing app with capabilities to track words per minute, generate random texts, use random scores, login system, and leaderboard  \par
+                \item Typing game that works similar to type racer with several different game modes to choose from
+            \end{itemize}
+            \par
+        }
+    \end{spacing}
+\end{document}
