@@ -6,8 +6,9 @@
 %set page spacing
 \usepackage{setspace}
 \usepackage{hyperref}
+\urlstyle{sf}
 
-\usepackage{mathptmx}  % Times-like font
+\usepackage{helvet}  % Helvetica font
 \geometry{
   a4paper,
   left=0.75in,
@@ -19,13 +20,12 @@
 \pagestyle{empty}
 
 % smaller itemize bullets
-\renewcommand{\labelitemi}{\raisebox{0.07em}{\scriptsize$\bullet$}}
+\renewcommand{\labelitemi}{\raisebox{0.07em}{\scriptsize\textbullet}}
 
 %Custom sectioning with secsty
 \usepackage{sectsty}
 \sectionfont{%                        
     \large % make sections smaller
-    \fontfamily{ptm}\selectfont % change font family
     \sectionrule{0pt}{0pt}{-5pt}{1pt} % insert a thin rule
 }
 
@@ -40,7 +40,6 @@
 %name macro
 \newcommand{\name}[1]{
     \Large%font size
-    \fontfamily{ptm}\selectfont %font family
     %print name centered and bold
     \begin{center} \textbf{#1} \end{center}\par
     %back to normal size and font
@@ -50,8 +49,8 @@
 
 \newcommand{\horizontalBox}[3]{
     \makebox[\linewidth][c]{
-        \textsl{#1}\hfill\raisebox{0.07em}{\scriptsize$\bullet$}\hfill
-        \textsl{#2}\hfill\raisebox{0.07em}{\scriptsize$\bullet$}\hfill
+        \textsl{#1}\hfill\raisebox{0.07em}{\scriptsize\textbullet}\hfill
+        \textsl{#2}\hfill\raisebox{0.07em}{\scriptsize\textbullet}\hfill
         \textsl{#3}
     }
         \noindent\rule{\linewidth}{0.4pt}% draws a thin line
