@@ -18,6 +18,9 @@
 %empty the headers, footers, pagenumbers…
 \pagestyle{empty}
 
+% smaller itemize bullets
+\renewcommand{\labelitemi}{\raisebox{0.07em}{\scriptsize$\bullet$}}
+
 %Custom sectioning with secsty
 \usepackage{sectsty}
 \sectionfont{%                        
@@ -104,54 +107,62 @@
         %Personal information
         \horizontalBox{blaha.s.connor@gmail.com}{330-606-0527}{Github: \url{https://github.com/SunCh1p}}
         %Summary
-        \splitbox{Objective:}{ Computer Science Graduate with skills in C++, python, javascript.}
+        \splitbox{Objective:}{ Computer Science graduate seeking a software development role or other tech related opportunities.}
         \splitbox{Education:}{BS Computer Science
             \par Graduated December 2025. \par Kent State University, Kent, Ohio \par GPA: 3.89}
         \splitbox{Skills:}{
-            \textbf{Languages} C++, Python, C\#, JavaScript, HTML, CSS, SQL, Bash, LaTeX\\
-            \textbf{Frameworks / Libraries:} React, Node.JS, Express, Flask, Pygame\\
-            \textbf{Tools:} Git, VSCode, VisualStudio, SQLite, MySQL}
-        \splitbox{Coursework:}{Design Patterns, Algorithms, Introduction to Artificial Intelligence, Human Interfaces and Computing, Introduction to Databases, Artificial intelligence, Introduction to Software Engineering, Introduction to Computer Graphics, Introduction to Game Design, Embedded Systems
+            \textbf{Languages:} C++, Python, C\#, JavaScript, GDScript, HTML, CSS, SQL, Bash, LaTeX\\
+            \textbf{Frameworks/Libraries:} React, Node.JS, Express, Flask, Pygame, Godot\\
+            \textbf{Tools:} Git, VSCode, VisualStudio, OpenCode\\
+            \textbf{Database Tools:} SQLite, MySQL}
+        \splitbox{Coursework:}{Design Patterns, Algorithms, Human Interfaces and Computing, Introduction to Databases, Artificial intelligence, Introduction to Software Engineering, Introduction to Computer Graphics, Introduction to Game Design, Embedded Systems
         }
-        \vspace{-1.5em}
+        \vspace{-2.5em}
         \section*{\Large \textbf{Projects}}
         \normalsize
-        \project{OpenGL Game}{August 2025 - December 2025}{\textbf{Github Link:} \url{https://github.com/SunCh1p/ComputerGraphicsClass}}
+        \project{Horror Game Prototype}{July 2026 - Present}{\textbf{Link:} \url{https://codeberg.org/SunCh1p/3D-Horror-Prototype}}
         {
             \begin{itemize}
                 \setlength\itemsep{0.01em}
-                \item 3D game built with C++ and FREEGLUT 
-                \item Implemented an Entity Component System for most of game logic and rendering  \par
-                \item Collision system, animations, projectile system, Model loading, Score System
+                \item Developing a first-person horror game in Godot 4.7 and GDScript, engineering modular player and enemy systems for extensible gameplay
+                \item Implemented finite-state-machine enemy AI (idle/chase/attack) and player controller, ensuring predictable, debuggable behavior across gameplay states
+                \item Engineered a signal-bus event system decoupling gameplay, UI, and audio subsystems to keep communication clean and maintainable; implemented procedural dungeon generation for replayable level variety
             \end{itemize}
             \par
         }
-        \project{Doc Reformed}{August 2025 - December 2025}{\textbf{Github Link:} \url{https://github.com/ch33s322/CS49999-Capstone}}
+        \project{OpenGL Renderer}{March 2026 - July 2026}{\textbf{Link:} \url{https://codeberg.org/SunCh1p/OpenGL-GLFW}}
         {
             \begin{itemize}
                 \setlength\itemsep{0.01em}
-                \item Pdf splitting application developed with dotnet and wpf for capstone project
-                \item pipe and filter architecture
+                \item Designed and built a 3D renderer in C++ with OpenGL and GLFW, structuring the pipeline for extensible multi-light rendering
+                \item Implemented Phong shading with diffuse/specular maps and a GLSL material system to deliver realistic surface lighting
+                \item Supported directional, point, and spot light casters, enabling multi-light scenes with consistent rendering performance
             \end{itemize}
             \par
         }
-        \project{ItemQuest}{January 2025 - May 2025}{\textbf{Github Link:} \url{https://github.com/Item-Quest/TeamBravo}}
+        \project{OpenGL Game}{August 2025 - December 2025}{\textbf{Link:} \url{https://github.com/SunCh1p/ComputerGraphicsClass}}
         {
             \begin{itemize}
                 \setlength\itemsep{0.01em}
-                \item Built using Socket.IO, Flask, React, and Tensorflow.js \par
-                \item Implemented real-time multiplayer with live scoring system and capabilities to run multiple simultaneous games. \par
-                \item Collaborated with a team of 10 to design and build the project using an agile methodology called scrum and a kanban board on github
+                \item Developed a 3D game in C++ and FREEGLUT, driving gameplay through a custom Entity Component System for clean separation of logic and rendering
+                \item Implemented collision detection, animations, projectiles, model loading, and a scoring system, delivering a complete playable experience
             \end{itemize}
             \par
         }
-        \project{ZoomZoomType}{January 2025 - May 2025}{\textbf{Github Link:} \url{https://github.com/SunCh1p/ZoomZoomType}}
+        \project{Doc Reformed}{August 2025 - December 2025}{\textbf{Link:} \url{https://github.com/ch33s322/CS49999-Capstone}}
         {
             \begin{itemize}
                 \setlength\itemsep{0.01em}
-                \item Built using React, Bootstrap, Expressjs, and Sqlite \par
-                \item Implemented typing app with capabilities to track words per minute, generate random texts, use random scores, login system, and leaderboard  \par
-                \item Typing game that works similar to type racer with several different game modes to choose from
+                \item Delivered a PDF-splitting desktop application in .NET and WPF as a capstone project, architected around a pipe-and-filter design for modular, extensible document processing
+            \end{itemize}
+            \par
+        }
+        \project{ItemQuest}{January 2025 - May 2025}{\textbf{Link:} \url{https://github.com/Item-Quest/TeamBravo}}
+        {
+            \begin{itemize}
+                \setlength\itemsep{0.01em}
+                \item Built a real-time multiplayer game with live scoring using Socket.IO, Flask, React, and TensorFlow.js, enabling simultaneous play with instant feedback
+                \item Collaborated on a 10-person team using scrum methodology and a GitHub kanban board, ensuring on-time delivery within a single semester
             \end{itemize}
             \par
         }
